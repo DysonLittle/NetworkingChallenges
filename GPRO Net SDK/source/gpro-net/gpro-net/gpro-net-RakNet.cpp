@@ -23,7 +23,7 @@
 */
 
 #include "gpro-net/gpro-net/gpro-net-RakNet.hpp"
-
+#include <iostream>
 
 namespace gproNet
 {
@@ -91,6 +91,7 @@ namespace gproNet
 
 		while (packet = peer->Receive())
 		{
+			std::cout << "Got here" << std::endl;
 			RakNet::BitStream bitstream(packet->data, packet->length, false);
 			bitstream.Read(msgID);
 
